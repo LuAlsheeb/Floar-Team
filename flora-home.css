@@ -1,0 +1,376 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+/* =========================
+   1. GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FDF9F5;
+    color: #3e2222;
+}
+
+
+/* =========================
+   2. NAVIGATION BAR
+========================= */
+
+.navbar {
+    height: 70px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff9f5;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 39px;
+    color: #432525;
+    text-decoration: none;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: #624c49;
+    text-decoration: none;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #B65D72;
+    border-bottom: 1px solid #B65D72;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #765d59;
+}
+
+.cart-icon {
+    font-size: 24px;
+    color: #B65D72;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.15);
+}
+
+.login-btn {
+    background: #B65D72;
+    color: white;
+    padding: 11px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+/* =========================
+   3. MAIN BANNER
+========================= */
+
+.hero {
+    height: 35vh;
+    min-height: 300px;
+    max-height: 390px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 10%;
+    overflow: hidden;
+    background: #e8d5c5;
+}
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(238, 222, 208, 0.18) 0%,
+            rgba(238, 222, 208, 0.04) 48%,
+            transparent 75%
+        ),
+        url('images/flora-banner.png');
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transform: scaleX(-1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 390px;
+    max-width: 48%;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #B65D72;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(55px, 6vw, 90px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 8px 0;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 1.7vw, 22px);
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+.hero-content p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #6f5955;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #B65D72;
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.primary-btn:hover {
+    background: #B65D72;
+}
+
+
+/* =========================
+   4. CATEGORIES SECTION
+========================= */
+
+.categories {
+    padding: 20px 6% 24px;
+    background: #FDF9F5;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 3vw, 36px);
+    font-weight: 400;
+    margin: 6px 0;
+}
+
+.flower-symbol {
+    font-size: 19px;
+    color: #B65D72;
+}
+
+
+/* =========================
+   5. FLOWER CARDS
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: #fff6ef;
+    border: 1px solid #eee1d9;
+    border-radius: 180px 180px 10px 10px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.category-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 50% 50% 0 0;
+    background: #ead8ca;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    border-radius: 50% 50% 0 0;
+}
+
+
+/* =========================
+   6. CARD INFORMATION
+========================= */
+
+.category-info {
+    padding: 14px 20px 18px;
+    text-align: left;
+}
+
+.category-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(17px, 1.8vw, 24px);
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.category-info p {
+    color: #82716c;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   7. PINK ARROW BUTTON
+========================= */
+
+.arrow-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #B65D72;
+    color: white;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    transition: transform 0.3s ease;
+}
+
+.arrow-btn:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   8. LAPTOP SCREENS
+========================= */
+
+@media (min-width: 900px) and (max-height: 850px) {
+
+    .navbar {
+        height: 60px;
+    }
+
+    .hero {
+        height: 35vh;
+        min-height: 300px;
+        max-height: 390px;
+    }
+
+    .categories {
+        padding-top: 14px;
+    }
+
+    .section-heading {
+        margin-bottom: 12px;
+    }
+
+    .category-info {
+        padding: 10px 16px;
+    }
+
+    .category-info p {
+        margin-bottom: 8px;
+    }
+
+    .arrow-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+
+/* =========================
+   9. MOBILE SCREENS
+========================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+        padding: 15px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .navbar nav {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        height: 430px;
+        min-height: 300px;
+        max-height: none;
+        padding: 30px 7%;
+    }
+
+    .hero-content {
+        max-width: 75%;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+
+    .category-image {
+        height: 240px;
+    }
+}
